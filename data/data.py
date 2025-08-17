@@ -1,11 +1,5 @@
-class Urls:
-    MAIN_URL = 'https://stellarburgers.nomoreparties.site/'
-    URL_USER_REGISTER = MAIN_URL + 'api/auth/register'
-    URL_USER_LOGIN = MAIN_URL + 'api/auth/login'
-    URL_USER_LOGOUT = MAIN_URL + 'api/auth/logout'
-    URL_USER_GET_DATA = MAIN_URL + 'api/auth/user'
-    URL_USER_DELETE = MAIN_URL + 'api/auth/user'
-    URL_ORDERS = MAIN_URL + 'api/orders'
+import random
+import string
 
 class Messages:
     MESSAGE_USER_UNAUTHORIZED = "You should be authorised"
@@ -18,3 +12,17 @@ class Ingredients:
     correct_ingredients = ["61c0c5a71d1f82001bdaaa6f", "61c0c5a71d1f82001bdaaa6d"]
     no_correct_ingredients = ["61c0c5a71d1f82001vkvkyu4", "w4875gbwoi8whgwe7gw7os7e"]
     null_ingredient = []
+
+class UserData:
+    data_with_empty_field = [
+        {'email': '',
+         'password': ''.join(random.choice(string.ascii_lowercase) for i in range(10)),
+         'name': ''.join(random.choice(string.ascii_lowercase) for i in range(10))},
+
+        {'email': ''.join(random.choice(string.ascii_lowercase) for i in range(10)),
+         'password': '',
+         'name': ''.join(random.choice(string.ascii_lowercase) for i in range(10))},
+
+        {'email': ''.join(random.choice(string.ascii_lowercase) for i in range(10)),
+         'password': ''.join(random.choice(string.ascii_lowercase) for i in range(10)),
+         'name': ''}]
